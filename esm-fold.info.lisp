@@ -1,0 +1,7 @@
+(:name           "esm-fold")
+(:repo           "taffish-org/esm-fold")
+(:author         "KaiyuanHan")
+(:version        "1.0.3")
+(:intro          "Evolutionary Scale Modeling (esm): Pretrained language models for proteins")
+(:dependencies)
+(:functions      "esm-fold")

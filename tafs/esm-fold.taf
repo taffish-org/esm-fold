@@ -1,0 +1,11 @@
++TOOL:esm-fold
+ARGS
+    <else>
+        esm-fold --help
+    <out>
+        ::*WORKDIR*::
+    <main>
+        esm-fold -i ::in:: -o ::out::
+RUN
+    <container:taf-esm-fold-v1.0.3:ghcr.io/taffish-org/esm-fold:1.0.3>
+        ::*MAIN*::

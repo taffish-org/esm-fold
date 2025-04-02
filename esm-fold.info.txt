@@ -1,0 +1,35 @@
+# <esm-fold:1.0.3 | KaiyuanHan | 2025-04-02>
+Usage:
+  % taf-esm-fold --in {input-fasta-file}
+  % taf-esm-fold --in {input-fasta-file} [--out {out-dir}]
+  % taf-esm-fold {CMD}
+  % taf-esm-fold esm-fold -i {input-fasta-file} -o ./
+  % taf-sem-fold esm-fold [-h] -i {FASTA} -o {PDB} [--num-recycles NUM_RECYCLES]
+                          [--max-tokens-per-batch MAX_TOKENS_PER_BATCH]
+                          [--chunk-size CHUNK_SIZE] [--cpu-only] [--cpu-offload]
+Opts:
+  -h, --help            show this help message and exit
+  -i FASTA, --fasta FASTA
+                        Path to input FASTA file
+  -o PDB, --pdb PDB     Path to output PDB directory
+  --num-recycles NUM_RECYCLES
+                        Number of recycles to run. Defaults to number used in
+                        training (4).
+  --max-tokens-per-batch MAX_TOKENS_PER_BATCH
+                        Maximum number of tokens per gpu forward-pass. This
+                        will group shorter sequences together for batched
+                        prediction. Lowering this can help with out of memory
+                        issues, if these occur on short sequences.
+  --chunk-size CHUNK_SIZE
+                        Chunks axial attention computation to reduce memory
+                        usage from O(L^2) to O(L). Equivalent to running a for
+                        loop over chunks of of each dimension. Lower values
+                        will result in lower memory usage at the cost of
+                        speed. Recommended values: 128, 64, 32. Default: None.
+  --cpu-only            CPU only
+  --cpu-offload         Enable CPU offloading
+
+Note:
+  {} :: (Need)     Your Input
+  [] :: (Optional) Arguments
+      
