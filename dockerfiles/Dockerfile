@@ -36,7 +36,9 @@ RUN apt-get update && apt-get install -y git wget libxml2-dev && \
     git fetch -q https://github.com/aqlaboratory/openfold.git 4b41059694619831a7db195b7e0988fc4ff3a307 && \
     git checkout -q 4b41059694619831a7db195b7e0988fc4ff3a307 && \
     sed -i 's/arch=compute_{major}{minor},code=sm_{major}{minor}/arch=compute_70,code=sm_70/g' ./setup.py && \
-    pip install -e . && \
+    pip install -e .
+
+RUN conda init bash && . /root/anaconda3/etc/profile.d/conda.sh && conda activate esmfold && \
     cd /esm-fold/install/ && \
     esm-fold -i ./test.fasta -o ./ || true
 
